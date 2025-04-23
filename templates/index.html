@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="templates/fevicon.png">
+
+
+    
+    <title>YTNote</title>
+    
+</head>
+
+<style>
+    .logo{
+width: 200px;
+height: 70px;
+margin-left: 10px;
+margin-top: 10px;
+cursor: pointer;
+margin-bottom: 30px;
+
+}
+
+    .v_link{
+        color: #0061d9;
+        font-size: 25px;
+        margin-top: 300px;
+        margin-left: 250px;
+        font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+.v_url{
+    width: 1000px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-color: #0061d9;
+    border-style: solid;
+    margin-left: 250px;
+    
+}
+
+.percentage{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    font-size: 25px;
+    color: #0061d9;
+}
+
+.percen{
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-color: #0061d9;
+    border-style: solid;
+    margin-left: 250px;
+}
+
+.sumtype{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    font-size: 25px;
+    color: #0061d9;
+}
+
+.selectsum{
+    width: 310px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-color: #0061d9;
+    border-style: solid;
+    margin-left: 250px;
+    cursor: pointer;
+    border-width: 2px;
+}
+
+.lang{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    font-size: 25px; 
+    color: #0061d9;
+}
+
+.selectlang{
+    width: 310px;
+    height: 40px;
+    margin: 20px;
+    margin-left: 250px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #0061d9;
+    border-width: 2px;
+    cursor: pointer;
+    
+
+}
+
+.speech{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    font-size: 25px; 
+    color: #0061d9;
+}
+
+.options{
+    width: 310px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-color: #0061d9;
+    border-width: 2px;
+    border-style: solid;
+    margin-left: 250px;
+    cursor: pointer;
+
+}
+
+.subbutton{
+    width: 200px;
+    height: 50px;
+    margin-left: 250px;
+    margin-top: 20px;
+    color: white;
+    background-color: #0061d9;
+    border-color: #0061d9;
+    border-style: solid;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+.subbutton:hover{
+    width: 210px;
+    height: 50px;
+    margin-left: 250px;
+    margin-top: 20px;
+    color: #0061d9;
+    background-color: white;
+    border-style: solid;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 1s;
+}
+
+</style>
+
+<body>
+    <header>
+        <img src="logo.png" class="logo">
+
+    </header>
+    
+    <form action="/process" method="POST">
+        <label class="v_link">YouTube Video Link:</label><br>
+        <input class="v_url" type="text" name="video_url" required><br><br>
+
+        <label class="percentage">Summary Percentage:</label><br>
+        <input class="percen" type="number" name="summary_percent" value="30" min="10" max="100"><br><br>
+
+        <label class="sumtype">Summarizer Type:</label><br>
+        <select class="selectsum" name="summarizer_type">
+            <option value="nltk">NLTK</option>
+            <option value="spacy">spaCy</option>
+            <option value="transformer">HuggingFace Transformers</option>
+        </select><br><br>
+
+        <label for="lang-code" class="lang">Choose a language:</label><br>
+            <select id="lang_code" name="lang_code" class="selectlang">
+                <option>Afrikaans</option>
+                <option>Albanian</option>
+                <option>Amharic</option>
+                <option>Arabic</option>
+                <option>Armenian</option>
+                <option>Azerbaijani</option>
+                <option>Basque</option>
+                <option>Belarusian</option>
+                <option>Bengali</option>
+                <option>Bosnian</option>
+                <option>Bulgarian</option>
+                <option>Catalan</option>
+                <option>Cebuano</option>
+                <option>Chichewa</option>
+                <option>Chinese (Simplified)</option>
+                <option>Chinese (Traditional)</option>
+                <option>Corsican</option>
+                <option>Croatian</option>
+                <option>Czech</option>
+                <option>Danish</option>
+                <option>Dutch</option>
+                <option>English</option>
+                <option>Esperanto</option>
+                <option>Estonian</option>
+                <option>Filipino</option>
+                <option>Finnish</option>
+                <option>French</option>
+                <option>Frisian</option>
+                <option>Galician</option>
+                <option>Georgian</option>
+                <option>German</option>
+                <option>Greek</option>
+                <option>Gujarati</option>
+                <option">Haitian Creole</option>
+                <option>Hausa</option>
+                <option>Hawaiian</option>
+                <option>Hebrew</option>
+                <option>Hebrew</option>
+                <option>Hindi</option>
+                <option>Hmong</option>
+                <option>Hungarian</option>
+                <option>Icelandic</option>
+                <option>Igbo</option>
+                <option>Indonesian</option>
+                <option>Irish</option>
+                <option>Italian</option>
+                <option>Japanese</option>
+                <option>Javanese</option>
+                <option>Kannada</option>
+                <option>Kazakh</option>
+                <option>Khmer</option>
+                <option>Korean</option>
+                <option>Kurdish (Kurmanji)</option>
+                <option>Kyrgyz</option>
+                <option>Lao</option>
+                <option>Latin</option>
+                <option>Latvian</option>
+                <option>Lithuanian</option>
+                <option>Luxembourgish</option>
+                <option>Macedonian</option>
+                <option>Malagasy</option>
+                <option>Malay</option>
+                <option>Malayalam</option>
+                <option>Maltese</option>
+                <option>Maori</option>
+                <option>Marathi</option>
+                <option>Mongolian</option>
+                <option>Myanmar (Burmese)</option>
+                <option>Nepali</option>
+                <option>Norwegian</option>
+                <option>Odia</option>
+                <option>Pashto</option>
+                <option>Persian</option>
+                <option>Polish</option>
+                <option>Portuguese</option>
+                <option>Punjabi</option>
+                <option>Romanian</option>
+                <option>Russian</option>
+                <option>Samoan</option>
+                <option>Scots Gaelic</option>
+                <option>Serbian</option>
+                <option>Sesotho</option>
+                <option>Shona</option>
+                <option>Sindhi</option>
+                <option>Sinhala</option>
+                <option>Slovak</option>
+                <option>Slovenian</option>
+                <option>Somali</option>
+                <option>Spanish</option>
+                <option>Sundanese</option>
+                <option>Swahili</option>
+                <option>Swedish</option>
+                <option>Tajik</option>
+                <option>Tamil</option>
+                <option>Telugu</option>
+                <option>Thai</option>
+                <option>Turkish</option>
+                <option>Ukrainian</option>
+                <option>Urdu</option>
+                <option>Uyghur</option>
+                <option>Uzbek</option>
+                <option>Vietnamese</option>
+                <option>Welsh</option>
+                <option>Xhosa</option>
+                <option>Yiddish</option>
+                <option>Yoruba</option>
+                <option>Zulu</option>
+            </select><br><br>
+        
+
+        <label class="speech">Convert to Speech:</label><br>
+        <select name="tts_option" class="options">
+            <option value="none">None</option>
+            <option value="extracted">Extracted Summary</option>
+            <option value="translated">Translated Summary</option>
+            <option value="both">Both</option>
+        </select><br><br>
+
+        <input type="submit" value="Process" class="subbutton">
+    </form>
+</body>
+</html>

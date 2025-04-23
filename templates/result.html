@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="fevicon.png">
+
+
+    <title>YTNote Result</title>
+    
+</head>
+
+<style>
+    .logo{
+width: 200px;
+height: 70px;
+margin-left: 10px;
+margin-top: 10px;
+cursor: pointer;
+margin-bottom: 30px;
+
+}
+</style>
+
+<body>
+    <header>
+        <img src="logo.png" class="logo">
+    </header>
+    <h2 style="color: #0061d9; font-family: 'Times New Roman', Times, serif;">Extracted Summary</h2>
+    <p>{{ summary }}</p>
+
+    <h2 style="color: #0061d9; font-family: 'Times New Roman', Times, serif;">Translated Summary</h2>
+    <p>{{ translated }}</p>
+
+    {% if audio_files %}
+        <h2 style="color: #0061d9; font-family: 'Times New Roman', Times, serif;">Audio Files</h2>
+        {% for file in audio_files %}
+            <p><b>{{ file }}</b></p>
+            <audio controls>
+                <source src="{{ url_for('download_audio', filename=file) }}" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio><br><br>
+            <a href="{{ url_for('download_audio', filename=file) }}" download>Download {{ file }}</a>
+        {% endfor %}
+    {% endif %}
+
+    <br><a href="/"><button style="background-color: #0061d9; color: white;">← Go Back</button></a>
+</body>
+</html>
