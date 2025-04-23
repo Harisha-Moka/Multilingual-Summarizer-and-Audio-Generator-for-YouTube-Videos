@@ -13,7 +13,7 @@ A web application that extracts transcripts from YouTube videos, summarizes them
 🌍 User-friendly web interface built with Flask
 
 🛠️ Tech Stack
-Frontend: HTML, CSS, JavaScript (optional if frontend is simple)
+Frontend: HTML, CSS
 
 Backend: Python, Flask
 
