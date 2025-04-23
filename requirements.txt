@@ -1,0 +1,8 @@
+Flask==2.3.3
+youtube-transcript-api==0.6.1
+nltk==3.8.1
+spacy==3.7.2
+transformers==4.39.3
+torch==2.2.2
+gtts==2.5.1
+deep-translator==1.11.4
